@@ -18,13 +18,29 @@ function atualizarOperacao(btn){
     display.value = '0';
 }
 
+//function raizquadrada(valor){
+    //const display = document.getElementById('display');
+    //const valor2 = parseInt(display.value);
+    //valor = valor * valor2 
+    // //valor = Math.sqrt(valor);
+    //return valor;
+
+//}
+
+
 function calcularOperacao(){
     const display = document.getElementById('display');
     const valor2 = parseInt(display.value);
-    valor1 = eval(valor1+operador+valor2);
+    if (operador === "√"){
+       
+        valor1 = Math.sqrt(valor1);
+    } else {
+        valor1 = eval(valor1+operador+valor2);
+    }
     display.value = valor1;
     operador = '';
 }       
+
 
 function manipularTeclado(){
     if(/[0-9]/.test(event.key))
